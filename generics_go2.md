@@ -42,3 +42,12 @@ isn't addable.
 
 One other thing that might be useful: Allow parametric functions named "_"
 which exist only to communicate type contracts.
+
+The obvious problem with this is that you can accidentally change a contract.
+On the other hand, it's not obvious what we should do now if one of the
+implementation functions uses functionality not guaranteed by a contract.
+Another alternative would be to keep contracts explict, but still use
+the simpler form of "you just declare functions on these types, marked
+in some way as being the contract(s)". I still think it's nicer and
+cleaner to be able to share and combine contracts, and more idiomatic
+to just use standard function declarations to do it.
